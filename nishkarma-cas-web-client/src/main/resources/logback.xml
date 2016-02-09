@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configuration file for LogBack (slf4J implementation)
+See here for more details: http://gordondickens.com/wordpress/2013/03/27/sawing-through-the-java-loggers/ -->
+<configuration scan="true" scanPeriod="30 seconds">
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <resetJUL>true</resetJUL>
+    </contextListener>
+    
+
+    <!-- To enable JMX Management -->
+    <jmxConfigurator/>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%date{ISO8601}] %-5level %logger{0} [%file:%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+
+	<appender name="file" class="ch.qos.logback.core.FileAppender">
+	    <file>cas-client.log</file>
+	    <encoder>
+	      <pattern>%date %level [%thread] %logger{10} [%file:%line] %msg%n</pattern>
+	    </encoder>
+	</appender>
+
+    <logger name="org.jasig.cas.client" level="debug"/>
+    <logger name="org.nishkarma" level="trace"/>
+         
+    <root level="info">
+        <appender-ref ref="console"/>
+<!--         <appender-ref ref="file"/> -->
+    </root>
+    
+</configuration>
