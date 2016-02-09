@@ -47,7 +47,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	
 	<h3>Where you want to go from here?</h3>
 	<p>
-		<a href="<%= request.getContextPath() %>/protected/">got to protected area</a>
+		<a href="<%= request.getContextPath() %>/protected/">go to protected area</a>
 	</p>
 	<p>
 		<a href="https://cas.example.org:8443/cas/login?service=<%= request.getRequestURL() %>">login</a>
